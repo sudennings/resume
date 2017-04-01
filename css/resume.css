@@ -30,20 +30,24 @@ img.auto{width: 100%;height: auto}
     left: -7%;}
 
 .nbs-flexisel-nav-right{
-   right: -7%;
+    right: -7%;
 
 }
 
 .nbs-flexisel-nav-left, .nbs-flexisel-nav-right {
     position: absolute;
     cursor: pointer;
-    z-index: 100;
+    z-index: 5;
     font-size:1.5rem;
     top:50%;
     color: #222222;
 }
 img.auto{width: 100%;height: auto}
 .style{font-style: italic;color:#999; }
+/*图片高光*/
+.lightImg{position: relative;overflow: hidden;}
+.lightImg:before{content:"";width:85px;height:100%;background-image: -moz-linear-gradient(left,rgba(255,255,255,0.05) 30%,rgba(255,255,255,0.1) 40%,rgba(255,255,255,0.05) 30%);position:absolute;left:-300px;top:0;transform:skew(-45deg);}
+.lightImg:hover:before{left:1000px;transition:all 1.5s ease;}
 
 #model{width: 100vw;height: 100vh;position: fixed;background:rgba(255,255,255,.5);z-index: 2;}
 #weixin{width:300px;height: 300px;position: fixed;left: 50%;margin-top: -150px;top:50%;margin-left: -150px;background: url("../images/wechat.jpg") no-repeat left top/cover;z-index: 3;}
@@ -133,7 +137,8 @@ img.auto{width: 100%;height: auto}
 .about-grid-left:hover .line{width:200px;background:  #D8B983;}
 .about-grid .social-icon{color: #999;}
 .social-icon{font-size: 38px;}
-.social-icon span{width: 30%;display: inline-block;padding: 1rem 0;font-size: 38px;color: #fff;cursor: pointer;}
+.social-icon span{width: 30%;display: inline-block;padding: 1rem 0;font-size: 38px;color: #fff;cursor: pointer;transition: all 1s;}
+.social-icon span:hover{transform: scale(1.2);text-shadow: 0 0 3px #fff;}
 .about-grid ul li {
     background:#efefef;
     border-radius: 4px;
@@ -160,18 +165,17 @@ img.auto{width: 100%;height: auto}
 }
 /*----------project-------------*/
 .project{background:#262626; }
-.project img{position: relative;}
-/*.project img:before{content: "";width: 100px;background: #fff;!*background-image: -moz-linear-gradient(left,rgba(255,255,255,0.3) 30%,rgba(255,255,255,1) 40%,rgba(255,255,255,0.3) 30%);*!height:100px;position: absolute;top:0;left:-50px;display: block;}*/
+
 .project .title{ padding: 50px 0;background: #2D2D2D;margin:0 15px 15px 15px;}
 .project-cont1{min-height:780px;}
 .project-cont1 .cont-left,.cont-right{height:750px;}
 .project-cont1 .cont-left .cont-left-up .div-inner{height: 350px;}
 .project-cont1 .cont-left .cont-left-up span{font-size:100px;color:#171717;line-height: 350px;transform: skew(30deg);}
 .project-cont1 .cont-right .div-inner{height:100%;padding: 0 60px;font-size: 12px;color: #ccc;}
- .cont-right .div-inner .pro-name{margin-top:15px;padding:100px 0;color: #fff;letter-spacing: 10px;}
+.cont-right .div-inner .pro-name{margin-top:15px;padding:100px 0;color: #fff;letter-spacing: 10px;}
 .div-inner{background: #2D2D2D;margin: 15px 0;}
-.project-cont2{background: #2D2D2D;margin: 15px 15px 0 15px;}
-.project-cont2 img{padding: 15px 0;}
+.project-cont2{background: #2D2D2D;margin: 15px 15px 0 15px;padding: 15px 0;}
+
 .pro-text{font-size: 16px;padding: 30px 0;}
 .skill{font-size: 12px;padding-bottom: 20px;word-break: break-all;}
 
@@ -229,7 +233,7 @@ p.kinds:before{content: "";width: 80px;height: 2px;background: #999;position: ab
 
 
 
-    /*-----certificate of honor----*/
+/*-----certificate of honor----*/
 .prize{background: #333333;color:#999;}
 .per-prize{padding: 30px 0;}
 .per-prize p{font-size: 21px;}
@@ -260,22 +264,22 @@ p.kinds:before{content: "";width: 80px;height: 2px;background: #999;position: ab
     margin-bottom: 30px;
 }
 .gtco-widget:nth-child(1) p{font-size: 14px;}
- .gtco-widget h3 {
+.gtco-widget h3 {
     margin-bottom: 15px;
-     font-weight: bold;;
+    font-weight: bold;;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
- .gtco-widget .gtco-quick-contact {
+.gtco-widget .gtco-quick-contact {
     padding: 0;
     margin: 0;
 }
- .gtco-widget .gtco-quick-contact li {
+.gtco-widget .gtco-quick-contact li {
     padding: 0;
     margin: 0 0 10px 0;
     list-style: none;
 }
- .gtco-widget .gtco-quick-contact li i {
+.gtco-widget .gtco-quick-contact li i {
     width: 30px;
     float: left;
     font-size: 18px;
@@ -287,11 +291,12 @@ p.kinds:before{content: "";width: 80px;height: 2px;background: #999;position: ab
     *display: inline;
 }
 .gtco-widget li a{color: #ccc;cursor: pointer;}
-    /*----bot-----*/
+/*----bot-----*/
 .bot{line-height: 30px;background: #333333;padding: 20px 0;color: #232323;}
 
 /*----------goTop-----*/
-.gototop a{display: block;width: 50px;height: 50px;border-radius: 5px;background: #ccc;color: #000;position: fixed;right:5px;bottom: 5px;line-height: 50px;text-align: center;font-size: 23px;}
+.gototop a{display: block;width: 50px;height: 50px;border-radius: 5px;background: #ccc;color: #000;position: fixed;right:5px;bottom: 5px;line-height: 50px;text-align: center;font-size: 23px;transition: all 1s;z-index: 6;}
+.gototop a:hover{text-shadow: 0 0 8px #000;}
 /*------响应------*/
 @media only screen and (max-width: 1200px), only screen and (max-device-width:1200px) {
     .project-cont1{min-height:715px;}

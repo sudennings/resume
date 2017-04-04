@@ -11,11 +11,11 @@ $(function(){
     });
 //
 $(".wechat").click(function(){
-    $("#model").fadeIn();
-    $("#weixin").fadeIn();
+    $("#model").fadeIn(1000);
+    $("#weixin").slideDown();
 });
     $("#model").click(function(){
-        $("#model").fadeOut();
-        $("#weixin").fadeOut();
+        $("#model").fadeOut(1000);
+        $("#weixin").slideUp();
     })
 });

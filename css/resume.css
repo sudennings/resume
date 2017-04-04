@@ -49,7 +49,7 @@ img.auto{width: 100%;height: auto}
 .lightImg:before{content:"";width:85px;height:100%;background-image: -moz-linear-gradient(left,rgba(255,255,255,0.05) 30%,rgba(255,255,255,0.1) 40%,rgba(255,255,255,0.05) 30%);position:absolute;left:-300px;top:0;transform:skew(-45deg);}
 .lightImg:hover:before{left:1000px;transition:all 1.5s ease;}
 
-#model{width: 100vw;height: 100vh;position: fixed;background:rgba(255,255,255,.5);z-index: 2;}
+#model{width: 100vw;height: 100vh;position: fixed;background:rgba(0,0,0,.7);z-index: 2;}
 #weixin{width:300px;height: 300px;position: fixed;left: 50%;margin-top: -150px;top:50%;margin-left: -150px;background: url("../images/wechat.jpg") no-repeat left top/cover;z-index: 3;}
 /*-------banner--------*/
 .color{ background-color: #222222;}

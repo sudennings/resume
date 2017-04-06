@@ -46,7 +46,7 @@ img.auto{width: 100%;height: auto}
 .style{font-style: italic;color:#999; }
 /*图片高光*/
 .lightImg{position: relative;overflow: hidden;}
-.lightImg:before{content:"";width:85px;height:100%;background-image: -moz-linear-gradient(left,rgba(255,255,255,0.05) 30%,rgba(255,255,255,0.1) 40%,rgba(255,255,255,0.05) 30%);position:absolute;left:-300px;top:0;transform:skew(-45deg);}
+.lightImg:before{content:"";width:85px;height:100%;background-image: -moz-linear-gradient(left,rgba(0,0,0,0.05) 30%,rgba(255,255,255,0.1) 40%,rgba(255,255,255,0.05) 30%);position:absolute;left:-300px;top:0;transform:skew(-45deg);}
 .lightImg:hover:before{left:1000px;transition:all 1.5s ease;}
 
 #model{width: 100vw;height: 100vh;position: fixed;background:rgba(0,0,0,.7);z-index: 2;}

@@ -3,6 +3,7 @@ html, body{
     background:	#fff;
     font-family: 'Open Sans', sans-serif !important;
     box-sizing: border-box;
+    transition: all 1s;
 }
 body a{
     transition: 0.5s all ease;
@@ -49,8 +50,8 @@ img.auto{width: 100%;height: auto}
 .lightImg:before{content:"";width:85px;height:100%;background-image: -moz-linear-gradient(left,rgba(0,0,0,0.05) 30%,rgba(255,255,255,0.1) 40%,rgba(255,255,255,0.05) 30%);position:absolute;left:-300px;top:0;transform:skew(-45deg);}
 .lightImg:hover:before{left:1000px;transition:all 1.5s ease;}
 
-#model{width: 100vw;height: 100vh;position: fixed;background:rgba(0,0,0,.7);z-index: 2;}
-#weixin{width:300px;height: 300px;position: fixed;left: 50%;margin-top: -150px;top:50%;margin-left: -150px;background: url("../images/wechat.jpg") no-repeat left top/cover;z-index: 3;}
+#model{width: 100vw;height: 100vh;position: fixed;background:rgba(0,0,0,.7);z-index: 2;display: none;left:0;top:0;}
+#weixin{width:300px;height: 300px;position: fixed;left: 50%;margin-top: -150px;top:50%;display: none;margin-left: -150px;background: url("../images/wechat.jpg") no-repeat left top/cover;z-index: 3;}
 /*-------banner--------*/
 .color{ background-color: #222222;}
 .banner {
@@ -294,9 +295,7 @@ p.kinds:before{content: "";width: 80px;height: 2px;background: #999;position: ab
 /*----bot-----*/
 .bot{line-height: 30px;background: #333333;padding: 20px 0;color: #232323;}
 
-/*----------goTop-----*/
-.gototop a{display: block;width: 50px;height: 50px;border-radius: 5px;background: #ccc;color: #000;position: fixed;right:5px;bottom: 5px;line-height: 50px;text-align: center;font-size: 23px;transition: all 1s;z-index: 6;}
-.gototop a:hover{text-shadow: 0 0 8px #000;}
+
 /*------响应------*/
 @media only screen and (max-width: 1200px), only screen and (max-device-width:1200px) {
     .project-cont1{min-height:715px;}

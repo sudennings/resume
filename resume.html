@@ -6,12 +6,39 @@
     <title>resume</title>
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <link href="css/resume.css" rel="stylesheet">
 
 </head>
 <body>
-<div id="model" style="display: none;"></div>
-<div id="weixin" style="display: none;"></div>
+<!--
+<div id="menu-list" class=" color"><div class="container">
+    <div class="row">
+        <div class="col-md-4">SuDennigs~</div>
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-sm-2 text-capitalize active">home</div>
+                <div class="col-sm-2 text-capitalize">music</div>
+                <div class="col-sm-2 text-capitalize">movie</div>
+                <div class="col-sm-2 text-capitalize">book</div>
+                <div class="col-sm-2 text-capitalize">book</div>
+                <div class="col-sm-2 text-capitalize">book</div>
+            </div>
+        </div>
+    </div>
+</div></div>
+-->
+<div id="menu" >
+    <i class="fa fa-list"></i>
+</div>
+<div class="menu-list">
+    <div><a href="#aboutMe">aboutMe</a></div>
+    <div><a href="#project">project</a></div>
+    <div><a href="#experience">college</a></div>
+    <div><a href="#prize">certificate</a></div>
+    <div><a href="#self">self</a></div>
+</div>
+<!--content-->
 <div id="resMain">
     <!------banner----->
     <div class="banner color">
@@ -64,7 +91,7 @@
     </div>
 
     <!------aboutme----->
-    <div class="aboutMe">
+    <div id="aboutMe" class="aboutMe">
         <div class="container">
             <div class="title text-center">
                 <h3><span>About</span> Me</h3>
@@ -76,9 +103,9 @@
                         <div class="line"></div>
                         <div class="slideLeft">
                             <div class=" social-icon">
-                                <span class="fa fa-wechat  text-center wechat slideLeft"></span>
-                                <span class="fa fa-weibo  text-center slideLeft"></span>
-                                <span class="fa fa-qq  text-center slideLeft"></span>
+                                <span class="fa fa-wechat  text-center wechat"></span>
+                                <span class="fa fa-weibo  text-center"></span>
+                                <span class="fa fa-qq  text-center"></span>
                             </div>
                         </div>
 
@@ -104,7 +131,7 @@
 
 
     <!------project----->
-    <div class="project">
+    <div id="project" class="project">
         <div class="container">
             <div class="title text-center">
                 <h3><span>My</span> Project</h3>
@@ -140,7 +167,7 @@
 
 
     <!--------brief-->
-    <div class="brief">
+    <div  id="brief" class="brief">
         <div class="container text-center">
             <div class="sliderexp">
                 <div id="flexiselDemo2" class="row clearfix">
@@ -163,7 +190,7 @@
 
 
     <!------college----->
-    <div class="college">
+    <div id="college" class="college">
         <div class="container">
             <!--<div class="title text-center">
                 <h3>College <span>Life</span></h3>
@@ -250,7 +277,7 @@
 
 
     <!-----experience----->
-    <div class="experience">
+    <div id="experience" class="experience">
         <div class="container">
             <div class="title text-center">
                 <h3>College <span>life</span></h3>
@@ -292,8 +319,9 @@
             </div>
         </div>
     </div>
+
     <!------certificate of honor----->
-    <div class="prize">
+    <div id="prize" class="prize">
         <div class="container">
             <div class="title text-center">
                 <h3>Certificate <span>Of Honor</span></h3>
@@ -338,9 +366,8 @@
         </div>
     </div>
 
-
     <!------self-evaluation----->
-    <div class="self">
+    <div id="self" class="self">
         <div class="container">
             <div class="title text-center">
                 <h3>Self <span>Evaluation</span></h3>
@@ -380,53 +407,58 @@
             </div>
         </div>
     </div>
-</div>
-<!--footer-->
-<div class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-sm-12 ">
-                <div class="gtco-widget slideRight">
-                    <h3>Say Something</h3>
-                    <p>在大学期间利用各种机会在行业中兼职，积累经验。虽然工作经验少，但我有较强的责任心，适应能力和学习能力，在高强度压力下依然能圆满完成任务。希望能获得一份web工程师的工作。</p>
-                </div>
-            </div>
 
-            <div class="col-md-4 col-sm-6 col-md-push-1 ">
-                <div class="gtco-widget slideRight">
-                    <h3>Links</h3>
-                    <ul class="gtco-footer-links">
-                        <li><a href="#">Knowledge Base</a></li>
-                        <li><a href="#">Career</a></li>
-                        <li><a href="#">Press</a></li>
-                        <li><a href="#">Terms of services</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                    </ul>
+    <!----footer---->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-12 ">
+                    <div class="gtco-widget slideRight">
+                        <h3>Say Something</h3>
+                        <p>在大学期间利用各种机会在行业中兼职，积累经验。虽然工作经验少，但我有较强的责任心，适应能力和学习能力，在高强度压力下依然能圆满完成任务。希望能获得一份web工程师的工作。</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="col-md-4 col-sm-6 ">
-                <div class="gtco-widget slideRight">
-                    <h3>Get In Touch</h3>
-                    <ul class="gtco-quick-contact">
-                        <li><a href="#"><i class="fa fa-phone"></i> +155 0433 0384</a></li>
-                        <li><a href="#"><i class="fa fa-mail-forward"></i> sudennings@163.com</a></li>
-                        <li><a href="#" class="wechat"><i class="fa fa-wechat wechat"></i> Live Chat</a></li>
-                    </ul>
+                <div class="col-md-4 col-sm-6 col-md-push-1 ">
+                    <div class="gtco-widget slideRight">
+                        <h3>Links</h3>
+                        <ul class="gtco-footer-links">
+                            <li><a href="#">Knowledge Base</a></li>
+                            <li><a href="#">Career</a></li>
+                            <li><a href="#">Press</a></li>
+                            <li><a href="#">Terms of services</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 ">
+                    <div class="gtco-widget slideRight">
+                        <h3>Get In Touch</h3>
+                        <ul class="gtco-quick-contact">
+                            <li><a href="#"><i class="fa fa-phone"></i> +155 0433 0384</a></li>
+                            <li><a href="#"><i class="fa fa-mail-forward"></i> sudennings@163.com</a></li>
+                            <li><a href="#" class="wechat"><i class="fa fa-wechat wechat"></i> Live Chat</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 <div  class="text-center bot">sdghsdfdkjlshkjgdfjfgyhjdfjydfj</div>
 
+
+
 <!--goTop-->
-<div class="gototop js-top">
-    <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
-</div>
+<div class="gototop js-top"><a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a></div>
+
+</body>
+
 <script src="js/jquery-3.1.0.js"></script>
+<script src="js/jquery.easing.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/resume.js"></script>
 <script src="js/slide.js"></script>
-</body>
 </html>

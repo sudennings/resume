@@ -14,7 +14,7 @@ $(function(){
                 $(this).animate({
                     opacity: 1,
                     left: 0
-                }, "normal","easeOutBounce");
+                }, "slow");
             }
         });
         //右滑
@@ -28,7 +28,7 @@ $(function(){
                 $(this).animate({
                     opacity: 1,
                     right: 0
-                }, "normal","easeOutBounce");
+                }, "slow");
             }
         })
     })

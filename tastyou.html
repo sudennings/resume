@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TASTYou</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0" />
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+
+
+    <style>
+        body{background: #343338;}
+        .proShadow{box-shadow: 2px 2px 8px 0 #242427;border: 4px solid #2F2F31;background:#2F2F31;}
+.banner{height: 500px;background: url("images/mybanner.jpg") no-repeat center top/cover;margin-bottom: 30px;}
+        /*--homeHeader--start--*/
+        a:hover{text-decoration: none;}
+        #homeHeader{line-height: 70px;height: 70px;background:#000; font-size: 18px;}
+        #homeHeader .homLogo a{font-size: 40px;letter-spacing: 3px;padding-left: 4rem;color:#fff;}
+        .homeMenu>div a{color:#fff;font-weight: bold;text-transform: capitalize;}
+        #homeHeader .menuAc{color:#FCD000; }
+        .re-content{display: flex;width: 98%;flex-wrap: wrap;}
+        .re-content .part{width:30%;height: 28rem;position: relative;background: #2F2F31;margin:15px;}
+        .re-content .part span{position: absolute;display: inline-block;width: 100%;height:5rem;background: rgba(255,255,255,0.5);left: 0;top:0; text-align: right;line-height:5rem;color: #fff;font-size: 2.5rem;}
+        .re-content .part a{width: 98%;height:22rem; display: block;padding:1%;overflow: hidden;}
+        .re-content .part a img{width:100%;height: auto;}
+        .re-content .part p{overflow: hidden;line-height:30px;  font-size: 16px;text-overflow: ellipsis;text-align: left;color:#fff;padding: 5px;}
+        /*--footer--start--*/
+        .homeBot{color: #878787;background: #111111;}
+        .homeBot .link{padding-left: 40px;}
+        .homeBot a{color:#878787;}
+        .homeBot .row>div{padding: 20px 15px;}
+        .homeBot ul{list-style: none;}
+        .botLogo{letter-spacing: 3px;}
+        .homeBot .me{font-size: 12px;}
+    </style>
+</head>
+<body>
+<!--homeHeader--start-->
+<div id="homeHeader">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4 homLogo"><a href="#">TASTYou</a></div>
+            <div class="col-sm-8">
+                <div class="row homeMenu">
+                    <div class="col-sm-3 text-center "><a class="menuAc" href="index.html">home</a></div>
+                    <div class="col-sm-3 text-center"><a href="pages/resume/resume.html">resume</a></div>
+                    <div class="col-sm-3 text-center"><a href="tastyou.html">echo</a></div>
+                    <div class="col-sm-3 text-center"><a href="#">portfolio</a></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="banner"></div>
+<template style="display: none;">
+    <div class="part proShadow">
+        <a href="#/songlist?id=574078104" onclick="route('songlist')"><img class="auto" src="images/3302932937405065.jpg"></a>
+        <p>有木有一首歌，触动你</p><span>25万</span>
+    </div>
+</template>
+<div class="myWorld">
+    <div class="container">
+        <div class="re-content clearFix"></div>
+    </div>
+</div>
+<div class="homeBot">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-12 ">
+                <div class="gtco-widget slideRight">
+                    <h3>Say Something</h3>
+                    <p>欢迎来到TASTYou<br>he strongest people have a past filled with chaos,heart break and disappointment.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-md-push-1 ">
+                <div class="gtco-widget slideRight">
+                    <h3 class="link">Links</h3>
+                    <ul class="gtco-footer-links">
+                        <li><a href="#">Knowledge Base</a></li>
+                        <li><a href="#">Career</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Terms of services</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 text-right">
+                <h3 class="botLogo">TASTYou</h3>
+                <div class="me">SuDennings</div>
+                <div class="me">echo me</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-3.1.0.js"></script>
+<script src="js/tastyou.js"></script>
+</body>
+</html>

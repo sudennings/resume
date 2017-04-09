@@ -166,13 +166,15 @@ img.auto{width: 100%;height: auto}
 }
 /*----------project-------------*/
 .project{background:#262626; }
-
+.project #img1{overflow: hidden;}
+.project #img2{overflow: hidden;}
 .project .title{ padding: 50px 0;background: #2D2D2D;margin:0 15px 15px 15px;}
-.project-cont1{min-height:780px;}
-.project-cont1 .cont-left,.cont-right{height:750px;}
+.project-cont1{min-height:780px;overflow: hidden;}
+.project-cont1 p{font-size: 16px;padding: 60px 30px;color:#ccc;}
+.project-cont1 .cont-left,.cont-right{height:780px;}
 .project-cont1 .cont-left .cont-left-up .div-inner{height: 350px;}
 .project-cont1 .cont-left .cont-left-up span{font-size:100px;color:#171717;line-height: 350px;transform: skew(30deg);}
-.project-cont1 .cont-right .div-inner{height:100%;padding: 0 60px;font-size: 12px;color: #ccc;}
+.project-cont1 .cont-right .div-inner{height:100%;padding: 0 70px;font-size: 12px;color: #ccc;}
 .cont-right .div-inner .pro-name{margin-top:15px;padding:100px 0;color: #fff;letter-spacing: 10px;}
 .div-inner{background: #2D2D2D;margin: 15px 0;}
 .project-cont2{background: #2D2D2D;margin: 15px 15px 0 15px;padding: 15px 0;}
@@ -183,6 +185,7 @@ img.auto{width: 100%;height: auto}
 
 /*-----college------*/
 .college{padding-bottom: 0;background: #333;padding-top: 0;}
+#college .collegetitle{background: #262626;}
 .college .part1{color:#fff;}
 .part1-left{background: #262626;min-height:756px;}
 .college .sign1Name{padding: 2rem 0;font-size: 14px;letter-spacing: 5px;}

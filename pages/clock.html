@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background: #000;}
+        .main{position: absolute;margin:0;left: 0;top:0;right: 0;bottom: 0;text-align: center;padding-top: 100px;}
+    </style>
+    <script src="js/jquery-3.1.0.js"></script>
+    <script>
+        $(function(){
+            var clock=$(".clock");
+            var w=clock.attr("width");
+            var h=clock.attr("height");
+            var lineW=10;
+            var circleW=document.createElementNS("http://www.w3.org/2000/svg","circle");
+            var circleM=document.createElementNS("http://www.w3.org/2000/svg","circle");
+            var hourLine=document.createElementNS("http://www.w3.org/2000/svg","line");
+            var minLine=document.createElementNS("http://www.w3.org/2000/svg","line");
+            var secLine=document.createElementNS("http://www.w3.org/2000/svg","path");
+//            外圆
+            $(circleW).attr({
+                "r":w/2-lineW/2,
+                "cx":w/2,
+                "cy":h/2 ,
+                "stroke":"#333",
+                "fill":"none" ,
+                "stroke-width":lineW
+            }).appendTo(clock);
+//            表盘中心
+
+//            表盘点
+            var z=230;
+            var deg=0;
+            for(var i=0;i<60;i++){
+//                每次循环都会创建一个circle；虽然名字一样，但是不一样的dom；
+                var circle=document.createElementNS("http://www.w3.org/2000/svg","circle");
+                deg+=6;
+                var x=Math.cos(Math.PI/180*deg)*z;
+                var y=Math.sin(Math.PI/180*deg)*z;
+                $(circle).attr({
+                    "r":3,
+                    "cx":w/2+y,
+                    "cy":h/2-x ,
+                    "stroke":"#333",
+                    "fill":"#333" ,
+                }).appendTo(clock);
+            }
+//            小时点
+            for (var i=5;i<=60;i+=5){
+                $("circle").eq(i).attr({
+                    "r":5,
+                    "stroke":"red",
+                    "fill":"red"
+                });
+            }
+//获取时间----------------------------------------------------------
+            var oDate=new Date;
+            var time=oDate.getTime();
+            var time=parseInt(time/1000);//转换成秒
+            var hours=parseInt(time/3600/3600);//相隔的小时
+            hours=Math.floor(hours%12);
+            console.log(hours);
+            time=time%3600;//过滤小时
+            var min=Math.floor(time/60);//相隔的分钟
+            console.log(min);
+            sec=parseFloat(time%60);//剩下的分钟
+            console.log(sec);
+            run(sec,min,hours);
+            setInterval(function(){
+                run(sec,min,hours);
+                sec++;
+            },1000);
+
+            function run(sec,min,hours){
+                //            时针-----------------------------------------------------------------------
+                var hourZ=120;
+                var hourDeg=hours*30+min/2;
+                console.log(hourDeg);
+                var hY=Math.cos(Math.PI/180*hourDeg)*hourZ;
+                var hX=Math.ceil(Math.sin(Math.PI/180*hourDeg)*hourZ);
+                $(hourLine).attr({
+                    "x1":w/2,
+                    "y1":h/2,
+                    "x2":w/2+hX ,
+                    "y2":h/2-hY
+                }).css({
+                    "stroke":"#666",
+                    "stroke-width":lineW-3
+                }).appendTo(clock);
+//            分针-----------------------------------------------------------------------
+                var minuZ=180;
+                var minuDeg=min*6+sec/10;
+                var mY=Math.cos(Math.PI/180*minuDeg)*minuZ;
+                var mX=Math.sin(Math.PI/180*minuDeg)*minuZ;
+                $(minLine).attr({
+                    "x1":w/2,
+                    "y1":h/2,
+                    "x2":w/2+mX ,
+                    "y2":h/2-mY
+                }).css({
+                    "stroke":"#666",
+                    "stroke-width":lineW/2-1
+                }).appendTo(clock);
+//            秒针---------------------------------------------------------------------
+                var secZ=235;
+                var secDeg=sec*6;
+                var x=Math.cos(Math.PI/180*secDeg);
+                var y=Math.sin(Math.PI/180*secDeg);
+                var sY=x*secZ;
+                var sX=y*secZ;
+
+                $(secLine).attr({
+                    "d":"M"+" "+w/2+" "+(h/2-3)+" L"+(w/2+sX)+" "+(h/2-sY)+"  L"+w/2+" "+(h/2+3),
+                  /*  "d":"M"+" "+(w/2-hx)+" "+(h/2-hy)+" L"+(w/2+sX)+" "+(h/2-sY)+"  L"+(w/2-hx)+" "+(h/2+hy),*/
+                    "fill":"red",
+                    "stroke":"red"
+                }).appendTo(clock);
+            }
+
+//            表盘圆心
+            $(circleM).attr({
+                "r":6,
+                "cx":w/2,
+                "cy":h/2 ,
+                "stroke":"#000",
+                "fill":"#000"
+            }).appendTo(clock);
+        })
+    </script>
+</head>
+<body>
+<div class="main">
+    <svg width="500" height="500" class="clock">
+    </svg>
+</div>
+
+
+</body>
+</html>

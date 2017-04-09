@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gallary</title>
+    <script src="js/jquery-3.1.0.js"></script>
+    <link href="../../css/font-awesome.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
+    <style>
+        body{background: #000;}
+        ul{list-style: none;}
+        .center{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;}
+        .gallary{
+            width: 980px;
+            height: 500px;
+        }
+        .item{
+            width: 194px;height: 98px;
+            position: absolute;background: #fff;
+            border: 1px solid #000;
+            -webkit-transition: transform 2s ease-in-out,opacity 2s;
+            -moz-transition: transform 2s ease-in-out,opacity 2s;
+            -ms-transition: transform 2s ease-in-out,opacity 2s;
+            -o-transition: transform 2s ease-in-out,opacity 2s;
+            transition: transform 2s ease-in-out,opacity 2s}
+        .pic{width: 100%;height: 100%;
+            -webkit-transition: transform 1s ease-in-out;
+            -moz-transition: transform 1s ease-in-out;
+            -ms-transition: transform 1s ease-in-out;
+            -o-transition: transform 1s ease-in-out;
+            transition: transform 1s ease-in-out;}
+
+    </style>
+    <script>
+        $(function(){
+            var animateSpeed=2000;
+            initi();
+            showAll();
+            var items=$(".item");
+            var isShowall=true;
+            items.click(function(){
+//                var _this=this;
+//                change(function(){
+                    if (isShowall){
+                        var index=items.index($(this));
+                        showPic(index)
+                    }else {
+                        showAll();
+                    }
+                    isShowall=!isShowall;
+//                });
+            });
+//            动效--------延迟随机隐藏
+        /*    function change(fn){
+              /!*  items.animate({"opacity":"0.1"},animateSpeed,fn)
+                      .animate({"opacity":"1"},animateSpeed);*!/
+                items.each(function(){
+                    var i=Math.random()*2000-300;
+                    $(this).delay(i).animate({"opacity":"0.1"},animateSpeed);
+                });
+                setTimeout(fn,2000+animateSpeed);//同步进行
+                items.each(function(){
+                    var i=Math.random()*2000-300;
+                    $(this).delay(i).animate({"opacity":"1"},4000);
+                });
+
+            }*/
+
+//            放入25张div
+            function initi(){
+                for(var i=0;i<25;i++){
+                    var gallary=$("ul.gallary");
+                    var x=parseInt(i%5);
+                    var y=parseInt(i/5);
+                    $('<li class="item"><div class="pic"></div></li>')
+                            .css({
+                                left:x*196+"px",
+                                top:y*100+"px"
+                            })
+                            .appendTo(gallary)
+                }
+            }
+//            每个pic中放入响应的图片
+            function showAll(){
+                var pics=$(".item .pic");
+                pics.css({"backgroundSize":"cover","transform":"scale(0.95)"}).each(function(index){
+                    $(this).css({"background-image":'url("images/'+index+'.jpg")'})
+                });
+                $(".item").css("opacity","0.7").each(function(index){
+                    var r=Math.random()*60-30;
+                    var x=index%5;
+                    var y=parseInt(index/5);
+                    var offsetX=50*x-100;
+                    var offsetY=50*y-100;
+//                                                                          空格隔开，合写
+                    $(this).css({"transform":"translate("+offsetX+"px,"+offsetY+"px) rotate("+r+"deg)"})
+
+                });
+            }
+//            点击谁出现对应的大图
+            function showPic(index){
+                var pics=$(".item .pic");
+                pics.css({
+                    "background-image": "url('images/" + index + ".jpg')",
+                    "background-size": "auto",
+                    "transform":"scale(1)"
+                }).each(function(i){
+                    var y = parseInt(i / 5);//0000011111222223333344444
+                    var x = parseInt(i % 5);//0123401234012340123401234
+                    $(this).css({
+                        "background-position": function () {
+                            return x * -196 + "px " + y * -100 + "px"
+                        }
+                    })
+                });
+                items.css("opacity","1").each(function(){
+//                                                                          空格隔开，合写
+                    $(this).css({"transform":"translate(0px,0px) rotate(0deg)"})
+                });
+
+            }
+
+
+        })
+    </script>
+</head>
+<body>
+<!--back-->
+<div class="backHome"><a href="../../index.html" ><i class="fa fa-long-arrow-left"></i></a></div>
+
+<ul class="gallary center">
+
+</ul>
+
+</body>
+</html>

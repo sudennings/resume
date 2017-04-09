@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>旋转</title>
+    <script src="../../js/jquery-3.1.0.js"></script>
+    <link href="../../css/font-awesome.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
+    <style>
+        body{background: #000;}
+        .center{margin: auto;left: 0;right: 0;top: 0;bottom: 0; position: absolute;}
+        .box{width: 980px;height: 500px;perspective:2000px;transform-style: preserve-3d;position: absolute;}
+        .item{opacity: 0.9;height: 100%;position: absolute;transition: transform 1s;}
+    </style>
+    <script>
+        $(function(){
+//            行数
+            var col=8;
+//            创建4个pic到box；
+            initi();
+//            初始化
+            function initi(){
+//            宽度
+                var box=$(".box");
+                var w=box.width()/col;
+                for(var i=0;i<4;i++){
+                    var slide=$("<div class='slide'></div>");
+                     slide.appendTo(box);
+//                 创建4个item到pic中；
+                    for(var j=0;j<col;j++){
+                        var deg=90*i;
+                        $("<div class='item'></div>")
+                                .width(w)
+                                .css({
+                                    "background-image":'url("images/'+i+'.jpg")',
+                                    "left":j*w,
+                                    "background-position":(j*-w)+"px",
+                                    "transform":"rotateX("+deg+"deg) translateZ(250px)",
+                                    "transition": "transform 0.5s "+j*0.1+"s"
+                                })
+                                .appendTo(slide);
+                    }
+                }
+            }
+            var count=0;
+//            旋转函数
+            function rotate(){
+                count++;
+                $(".slide").each(function(i){
+                    var deg=90*i-90*count;
+                    $(this).find(".item").css({"transform":"rotateX("+deg+"deg) translateZ(250px)"});
+//                    让每一个item延迟执行，在"transition": "transform 0.8s 延迟时间'来做，但每一个item延迟的时间不一样，所以就直接在css样式里写
+                })
+            }
+            $("body").click(rotate);
+        })
+
+
+    </script>
+</head>
+<body>
+<!--back-->
+<div class="backHome"><a href="../../index.html" ><i class="fa fa-long-arrow-left"></i></a></div>
+
+<div class="box center">
+
+</div>
+
+</body>
+</html>

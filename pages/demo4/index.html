@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gallary</title>
+    <script src="../../js/jquery-3.1.0.js"></script>
+    <link href="../../css/font-awesome.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
+    <style>
+        *{margin: 0;padding: 0;}
+        body{background: #000;}
+        ul{list-style: none;}
+        .center{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;}
+        .gallary{
+            width: 980px;
+            height: 500px;
+        }
+        .item{
+            width: 35px;height: 50px;
+            position: absolute;
+            background-image: url("images/4.jpg");
+            -webkit-transition: transform 2s ease-in-out;
+            -moz-transition: transform 2s ease-in-out;
+            -ms-transition: transform 2s ease-in-out;
+            -o-transition: transform 2s ease-in-out;
+            transition: transform 2s ease-in-out;
+        }
+    </style>
+    <script>
+        $(function(){
+            initi();
+//            放入25张div
+            function initi(){
+                for(var i=0;i<280;i++){
+                    var gallary=$("ul.gallary");
+                    var x=parseInt(i%28);
+                    var y=parseInt(i/28);
+                    var left=Math.ceil(Math.random()*1920*2) - 1920;
+                    var top=Math.ceil(Math.random()*1080*2) - 1080;
+                    $('<li class="item"></li>')
+                            .css({
+                                left:left+"px",
+                                top:top+"px",
+                                backgroundPosition:x*-35+"px "+y*-50+"px",
+                                opacity:"0"
+                            })
+                            .appendTo(gallary)
+                }
+            }
+            (function play(){
+                var items=$(".item");
+                items.each(function(i){
+                    var x=parseInt(i%28);
+                    var y=parseInt(i/28);
+                    var t=Math.random()*10000;
+                    $(this).delay(t).animate({
+                        left:x*35+"px",
+                        top:y*50+"px",
+                        opacity:"1"
+                    },8000,"linear")
+                })
+
+            })()
+
+
+
+
+        })
+    </script>
+</head>
+<body>
+<!--back-->
+<div class="backHome"><a href="../../index.html" ><i class="fa fa-long-arrow-left"></i></a></div>
+<ul class="gallary center">
+
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+   <link href="../../css/style.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        #cav{width:1800px;height:900px;background: darkgray;margin-left: 50px;}
+        #cav:hover{cursor:pointer;}
+        .eraser{width: 30px;height:30px;position: absolute;top:60px;left:10px;text-align: center;font-size: 30px;}
+        .eraser:hover{cursor: move;}
+        .colors{position: absolute;width: 40px;top:100px;}
+        .colors>div{float: left;width: 30px;height: 30px;border-radius: 50%;}
+        .colors>div:hover{
+            cursor:crosshair; }
+        .red{background: red;}
+        .orange{background: orange;}
+        .yellow{background: yellow;}
+        .aqua{background: aqua;}
+        .pink{background: pink;}
+        .blue{background: blue;}
+        .purple{background: purple;}
+        .pens{position: absolute;top:320px;width: 30px;}
+        .pens>div{width: 30px;height: 30px;border: 1px solid #000;text-align: center;line-height: 30px;}
+        .pens>div:hover{cursor:pointer;}
+    </style>
+    <script>
+    window.onload=function(){
+        var cvs=document.getElementById("cav");
+        var ctx=cvs.getContext("2d");
+        var eraser=document.getElementsByClassName("eraser")[0];
+        var colors=document.getElementsByClassName("colors")[0];
+        var aCol=colors.getElementsByTagName("div");
+        var pens=document.getElementsByClassName("pens")[0];
+        var pen=pens.getElementsByTagName("div");
+        var color=["red","orange","yellow","aqua","pink","blue","purple"];
+        var size=[2,4,6,8,10,12,14];
+      /*  var colClick=false;
+        var penClick=false;
+        var ifClick=true;*/
+//        全局变量
+        var ruu;
+        var pencil=3;
+        //选择颜色
+        for(var i=0;i<aCol.length;i++){
+            aCol[i].index=i;
+            aCol[i].onclick=function(){
+                ruu=color[this.index];
+                draw(ruu,pencil);
+            }
+        }
+
+
+        for(var j=0;j<pen.length;j++){
+            pen[j].index=j;
+            pen[j].onclick=function(){
+                pencil=size[this.index];
+                draw(ruu,pencil);
+            }
+        }
+        var ifClick=true;
+//        默认颜色
+        if (ifClick){
+            draw("pink",3);
+        }
+//点击橡皮
+        eraser.onclick=function(){
+            ifClick=!ifClick;
+            draw("darkgray",60);
+        };
+//绘制画笔动作
+       function draw(color,thick){
+           var lastX;
+           var lastY;
+           var upDown=false;
+           cvs.onclick=function(){
+               upDown=!upDown;
+               lastX=undefined;
+               lastY=undefined
+           };
+           cvs.onmousemove=function(e){/*q切记是cvs*/
+               if(upDown){
+                   if (lastX===undefined){
+//                如果为undefined，就让值为当前鼠标坐标；
+                       lastX=e.offsetX;
+                       lastY=e.offsetY;
+                       return;
+                   }
+                   if(ifClick){
+                       eraser.style.top="lastY";
+                       console.log(eraser.style.top);
+                       eraser.style.left="lastX";
+                   }
+                   ctx.beginPath();
+                   ctx.moveTo(lastX,lastY);
+                   ctx.lineTo(e.offsetX,e.offsetY);
+                   ctx.lineWidth=thick;
+                   ctx.strokeStyle=color;
+                   ctx.stroke();
+//            把上一个鼠标结束的值设置为现在开始的值
+                   lastX=e.offsetX;
+                   lastY=e.offsetY;
+               }
+           };
+       }
+
+
+
+    }
+    </script>
+</head>
+<body>
+<!--back-->
+<div class="backHome"><a href="../../index.html" ><i class="fa fa-long-arrow-left"></i></a></div>
+<span class="eraser fa fa-eraser"></span>
+
+<div class="colors">
+    <div class="red"></div>
+    <div class="orange"></div>
+    <div class="yellow"></div>
+    <div class="aqua"></div>
+    <div class="pink"></div>
+    <div class="blue"></div>
+    <div class="purple"></div>
+</div>
+<div class="pens">
+    <div class="fa fa-eyedropper" style="font-size: 14px;"></div>
+    <div class="fa fa-eyedropper" style="font-size: 16px;"></div>
+    <div class="fa fa-eyedropper" style="font-size: 18px;"></div>
+    <div class="fa fa-eyedropper" style="font-size: 20px;"></div>
+    <div class="fa fa-eyedropper" style="font-size: 22px;"></div>
+    <div class="fa fa-eyedropper" style="font-size: 23px;"></div>
+    <div class="fa fa-eyedropper" style="font-size: 25px;"></div>
+</div>
+<canvas id="cav" width="1800" height="900">你的浏览器不支持canvas</canvas>
+
+</body>
+</html>

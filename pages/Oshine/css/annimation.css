@@ -1,0 +1,71 @@
+@keyframes  bg1{
+    0%  {opacity: 0}
+    10%  {opacity: 1}
+    20%  {opacity: 1}
+    30%  {opacity: 1}
+    40%  {opacity: 1}
+    50%  {opacity: 0}
+    60%  {opacity: 0}
+    70%  {opacity: 0}
+    80%  {opacity: 0}
+    90%  {opacity: 0}
+    100%  {opacity: 0}
+}
+header .bg1{
+    z-index: -3;
+    opacity: 0;
+    background:url("../images/oshin-model-0008.jpg") no-repeat center ;
+    animation:bg1 10s linear 5s infinite ;
+
+}
+@keyframes  bg2{
+    0%  {opacity: 0}
+    10%  {opacity: 1}
+    20%  {opacity: 1}
+    30%  {opacity: 1}
+    40%  {opacity: 1}
+    50%  {opacity: 0}
+    60%  {opacity: 0}
+    70%  {opacity: 0}
+    80%  {opacity: 0}
+    90%  {opacity: 0}
+    100%  {opacity: 0}
+}
+header .bg2{
+    z-index: -2;
+
+    background:url("../images/oshin-slide-1.jpg") no-repeat center top/cover;
+    animation:bg2 10s  linear  infinite ;
+
+}
+
+
+
+
+
+
+
+@keyframes to-bottom {
+    0%   {opacity:0;top:-300px;}
+    40%  {opacity:.1;}
+    50%  {opacity:.2;}
+    100% {opacity:1;top:0;}
+}
+header .mid .fir{animation: to-bottom .8s;}
+
+@keyframes to-bottom1 {
+    0%   {opacity:0;top:-200px;}
+    40%  {opacity:.1;}
+    50%  {opacity:.2;}
+    100% {opacity:1;top:0;}
+}
+header .mid .tir{animation: to-bottom1 .8s;}
+
+@keyframes to-top {
+    0%   {opacity:0;bottom:-300px;}
+    40%  {opacity:.1;}
+    50%  {opacity:.2;}
+    100% {opacity:1;bottom:0;}
+}
+header .mid .sec{animation: to-top .8s;}
+

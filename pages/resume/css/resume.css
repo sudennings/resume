@@ -165,7 +165,7 @@ img.auto{width: 100%;height: auto}
     margin-right:3rem;
 }
 /*----------project-------------*/
-.project{background:#262626; }
+.project{background:#262626;padding-bottom: 0; }
 .project #img1{overflow: hidden;}
 .project #img2{overflow: hidden;}
 .project .title{ padding: 50px 0;background: #2D2D2D;margin:0 15px 15px 15px;}
@@ -186,8 +186,9 @@ img.auto{width: 100%;height: auto}
 /*-----college------*/
 .college{padding-bottom: 0;background: #333;padding-top: 0;}
 #college .collegetitle{background: #262626;}
-.college .part1{color:#fff;}
-.part1-left{background: #262626;min-height:756px;}
+#college .skill{font-size: 14px;}
+.part1{color:#fff;padding-top: 3rem;}
+.part1-left{background: #2D2D2D;min-height:756px;}
 .college .sign1Name{padding: 2rem 0;font-size: 14px;letter-spacing: 5px;}
 .part1-left .sign1{padding:10px 50px 20px 0;position: relative;}
 .part1-left .sign1 span{position: absolute;left: -5.5rem;bottom: 5rem;font-size: 2rem;}
@@ -195,11 +196,11 @@ img.auto{width: 100%;height: auto}
 .part1-right .sign2{padding:10px 0 20px 50px;}
 .part1-right .sign2 p{font-size: 14px;padding-top: 30px;}
 .part1-right .sign2 img{padding-top: 10px;}
-.part1,.part2,.part3{padding: 3rem 0;}
+.part2,.part3{padding: 3rem 0;}
 p.shu{writing-mode: vertical-rl;letter-spacing: 15px;padding-top:100%;font-size: 16px;}
 
 
-.part2-left{padding: 7.5rem 40px 0;}
+.part2-left{padding: 4rem 40px 0;}
 .part2-left .pro-text{color: #999;}
 .part2-left .skill{color: #999;}
 .part2-right{vertical-align: bottom;}
@@ -208,9 +209,11 @@ p.shu{writing-mode: vertical-rl;letter-spacing: 15px;padding-top:100%;font-size:
 .part2-right .inviteW{width: 70%;}
 p.kinds{position: relative;margin-bottom: 60px;font-size: 16px;color: #fff;}
 p.kinds:before{content: "";width: 80px;height: 2px;background: #999;position: absolute;left: 50%;margin-left: -40px;bottom: -10px;display: block;}
-.part3{background: #262626;}
-.part3-right{padding-top: 2rem;color: #999;padding-left:60px;padding-right:60px;}
-.part3-right .pro-text{font-size: 15px;}
+.part3{background: #262626;font-size: 16px;}
+.part3 #practice{margin-bottom:2rem; }
+.part3-right{color: #999;padding-left:30px;}
+.part3-right .pro-text{font-size: 15px;padding: 0;}
+.part3-right .skill{padding-top: 20px;}
 
 
 

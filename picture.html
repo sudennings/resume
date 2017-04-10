@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>picture</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style>
+
+        body{background: #000;}
+        .auto{width: 100%;height: auto;}
+        /*--homeHeader--start--*/
+          a:hover{text-decoration: none;}
+          #homeHeader{line-height: 70px;height: 70px;background:#000; font-size: 18px;}
+          #homeHeader .homLogo a{font-size: 40px;letter-spacing: 3px;padding-left: 4rem;color:#fff;}
+        #homeHeader .homeMenu>div a{color:#fff;font-weight: bold;text-transform: capitalize;}
+          #homeHeader .menuAc{color:#FCD000; }
+        .picBanner{background: #323232;height:500px;background: url("images/picbanner.jpg")no-repeat center bottom/cover;}
+        .picture{margin-top: -60px;}
+        .perPart>div{margin-bottom: 20px;position: relative;transition: all 1s;overflow: hidden;}
+        .perPart>div img{transition: all 1s;}
+      /*  .perPart>div:hover:before{content: "";position: absolute;width: 100%;height: 100%;background-image: -webkit-linear-gradient(left,#AF3A72 30%,#8E50A9 70%);opacity: 0.9;}*/
+        .perPart>div img:hover{transform: scale(1.2);}
+        .remind{text-align: center;height: 100px;line-height: 100px;color:#333;font-size: 38px;}
+
+
+    </style>
+    <script>
+        window.onload=function(){
+            var oBox=document.getElementById("box");
+            var aUl=oBox.getElementsByClassName("perPart");
+            var num=0;
+            //判断最短ul加入20li
+            function ulPK(){
+                var oUl=null;
+                var ulA=aUl[0].offsetHeight;
+                var ulB=aUl[1].offsetHeight;
+                var ulC=aUl[2].offsetHeight;
+                if(ulA<ulB){//先1.2比，小的再和另一个比
+                    if(ulA<ulC){
+                        oUl=aUl[0];
+                    }else {
+                        oUl=aUl[2];
+                    }
+                }else {
+                    if (ulB<ulC){
+                        oUl=aUl[1];
+                    }else {
+                        oUl=aUl[2];
+                    }
+                }
+                return oUl;//返还出来用
+            }
+
+
+            //创建li
+            function creatLi(n){
+                var oLi=document.createElement("div");
+                oLi.innerHTML="<img class='auto' src='images/img/"+n+"'>";
+                return oLi;//返还出来用
+            }
+
+        var pics=["01.jpg","15.jpg","03.jpg","04.jpg","05.jpg","06.jpg","1.jpeg","2.jpeg","3.jpeg","4.jpeg","5.jpeg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpeg","11.jpeg","12.jpeg","13.jpg","14.jpg","15.jpg","16.jpeg","17.jpeg","18.jpg","19.jpg","20.jpg","21.jpg","22.jpg","23.jpg","24.jpg","25.jpg","26.jpg","27.jpg","28.jpg","29.jpg","30.jpg","31.jpg","32.jpg","33.jpg","34.jpeg"];
+            //插入20li
+            var n=0;
+            function addLi(){
+                if(typeof  pics[n]==="undefined") {
+                    console.log("nono");
+                    var op = document.createElement("p");
+                    op.innerHTML = "没有更多图片了！";
+                    op.setAttribute("class","remind");
+                    document.body.appendChild(op);
+                }else {
+                    setTimeout(function(){
+                        for(var i=n;i<n+20;i++){
+                            var minUl=ulPK();
+                            minUl.appendChild( creatLi(pics[i]) );
+                        }
+                    },1000);
+                }
+
+
+            }
+            addLi();//刚运行就加入20li
+
+
+            //滚动
+            window.onscroll=function(){
+                var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;//滚动条高度
+                var remind=document.getElementsByClassName("remind")[0];
+                var wHeight=document.documentElement.clientHeight;//浏览器高度
+                var bHeight=document.documentElement.offsetHeight;//body的高度
+                if(typeof remind!="undefined"){bHeight+=50;}
+                console.log(remind);
+                if(scrollTop+wHeight>=bHeight){
+                    n+=20;
+                    addLi();
+                }
+            }
+
+        }
+
+
+    </script>
+</head>
+<body>
+<!--homeHeader--start-->
+<div id="homeHeader">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4 homLogo"><a href="#">TASTYou</a></div>
+            <div class="col-sm-8">
+                <div class="row homeMenu">
+                    <div class="col-sm-3 text-center "><a class="menuAc" href="index.html">home</a></div>
+                    <div class="col-sm-3 text-center"><a href="pages/resume/resume.html">resume</a></div>
+                    <div class="col-sm-3 text-center"><a href="tastyou.html">echo</a></div>
+                    <div class="col-sm-3 text-center"><a href="picture.html">picture</a></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="picBanner">
+    <div class="container-fluid">
+    </div>
+</div>
+<div class="picture">
+    <div class="container">
+        <div class="row" id="box">
+            <div class="col-xs-4 perPart" ></div>
+            <div class="col-xs-4 perPart"></div>
+            <div class="col-xs-4 perPart"></div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

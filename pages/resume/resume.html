@@ -128,22 +128,28 @@
         </div>
 
         <div class="part3">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
-                    <div class="part3-left col-md-7 slideLeft">
-                        <img src="images/4.jpg" class="auto">
+                    <div class="part2-right col-md-5 slideLeft">
+                        <div class="zheye"><div class="slideRight"><img class="auto" src="images/city1.png"></div>
+                            <div class="inviteN"><div class=" slideRight"><img class="auto" src="images/city2.png"></div></div>
+                        </div>
+                        <div class="inviteW"><div class="slideRight"><img class="auto" src="images/city3.png"></div></div>
                     </div>
-                    <div class="part3-right col-md-5">
+                    <div class="part3-right col-md-7">
                         <div class="title text-center">
-                            <p class="kinds slideRight">portfolio</p>
-                            <h3 class="style slideRight">practice </h3>
-                            <p class="pro-text slideRight">
-                                网站主要是一个音乐播放平台，采用模块化开发，实现页面不同状态之间的传参跳转，自定
-                                义封装了适合本项目的路由模块，采用本地缓存提高了性能，网站主要使用html5+css，结
-                                合flex弹性盒模型进行网页布局与样式，使用jQuery达到动态效果的实现；使用ajax实现
-                                数据的动态加载。
+                            <h3 class="style slideRight" id="practice">practice </h3>
+                            <p class="pro-text slideRight text-left">
+                                1. 主要使用div+css达到布局和样式的实现，使用javaScript与jQuery达到了所需动效的实现；<br>
+                                2. 使用node.js及express框架搭建，引入npm模块，包括http模块、express、socket.io，使用ajax实现数据的动态加载。<br>
+                                3. 实现客户与客服智能机器人的自动回答交互，通过socket.io实现客户端与服务器的双向通信；<br>
+                                　　1） 采用精灵技术结合JS动态改变背景图的定位来实现布局 ,节省服务器端请求的次数和字节数 ；<br>
+                                　　2） 通过增加request和response之间的数据的type类型判断，用以区分用户需要的是什么请求以便于服务器端能匹配客户的请求；<br>
+                                4.  采用AngularJS提供的路由配置模块$routeProvider，设计出各个页面模块间的配置路由信息，以便实现各个模块间的通信，url参数解析模块$routeParams，实现各个页面间的传递数据的功能。<br>
+                                　　1）采用面向对象的思想，设计出购物车功能应该具备的主要属性和方法（增删查改）并封装在一个对象内使用AngularJS提供的factory方法创建公共的服务以方便其他页面间的调用；<br>
+                                　　2）采用AngularJS提供的异步请求数据模块$http，动态请求json数据以显示商品的基本信息和详情信息；
                             </p>
-                            <p class="skill slideRight">项目技术<br>html,css,JavaScript,jQuery,node.js,Ajax</p>
+                            <p class="skill slideRight">项目技术<br>Bootstrap，html，css，JS，jQuery，node.js，ajax，json，AngularJS</p>
                         </div>
                     </div>
                 </div>
@@ -155,54 +161,47 @@
                 <div class="row">
                     <div class="part2-left col-md-5">
                         <div class="title text-center">
-                            <p class="kinds slideLeft">portfolio</p>
                             <h3 class="style slideLeft">invitation </h3>
-                            <p class="pro-text slideLeft">此网站主要是一个服装商品的推广网站，网站主要使用Bootstrap库和html5+css达到布局和样式的实现，使用javaScript,jQuery达到了动态效果的实现；使用node.js及express框架搭建，用ajax实现数据的动态加载。</p>
-                            <p class="skill slideLeft">项目技术<br>html,css,JavaScript,jQuery,node.js,Ajax</p>
+                            <p class="pro-text slideLeft text-left">1.主要使用html5+css，结合flex弹性盒模型进行网页布局与样式，采用vw，rem解决字体适配问题；<br>
+                                2.采用模块化思想封装各个功能模块，区分出共享模块和独立模块，页面结构分离；<br>
+                                3.自定义封装了适合本项目的路由模块，编写底层的路由模块函数以及url地址分析提取模块函数，实现单页面间的数据通信；<br>
+                                4.采用H5里面localstorage本地缓存，解决流量的控制和二次加载的问题，提高性能；<br>
+                                5.采用Ajax异步请求数据的方式，实现数据的动态加载，解析数据并渲染到页面。</p>
+                            <p class="skill slideLeft">项目技术<br>HTML，CSS，FLex，jQuery，Ajax，Bootstrap，localstorage</p>
                         </div>
                     </div>
                     <div class="part2-right col-md-7 clearfix">
-                        <div class="zheye"><div class="slideRight"><img class="auto" src="images/zhenei.jpg"></div>
-                            <div class="inviteN"><div class=" slideRight"><img class="auto" src="images/inviten.jpg"></div></div>
+                        <div class="zheye"><div class="slideRight"><img class="auto" src="images/music1.png"></div>
+                            <div class="inviteN"><div class=" slideRight"><img class="auto" src="images/music2.png"></div></div>
                         </div>
-                        <div class="inviteW"><div class="slideRight"><img class="auto" src="images/invitew.jpg"></div></div>
+                        <div class="inviteW"><div class="slideRight"><img class="auto" src="images/music3.png"></div></div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="part1">
-            <div class="container-fluid">
+        <div class="part3">
+            <div class="container">
                 <div class="row">
-                    <div class="part1-left col-md-6">
-                        <div class="row">
-                            <div class="col-sm-4 col-md-5   col-xs-3"></div>
-                            <div class="col-sm-8 col-md-7 col-xs-9 ">
-                                <p class="sign1Name">HOME BY DESIGN</p>
-                                <div class="sign1 slideLeft">
-                                    <img src="images/NAME-MeiSu.jpg" class="auto">
-                                    <span>FIRMINY-VERT <br>AREA</span>
-                                </div>
-
-                            </div>
-
+                    <div class="part2-right col-md-7 slideLeft clearfix">
+                        <div class="zheye"><div class="slideRight"><img class="auto" src="images/tast3.png"></div>
+                            <div class="inviteN"><div class=" slideRight"><img class="auto" src="images/tast1.png"></div></div>
                         </div>
-
+                        <div class="inviteW"><div class="slideRight"><img class="auto" src="images/tast2.png"></div></div>
                     </div>
-                    <div class="part1-right col-md-6">
-                        <div class="row">
-                            <div class="col-sm-8 col-md-7 col-xs-9 ">
-                                <div class="sign2 slideRight">
-                                    <p class="sign1Name">FIRMINY-VERT AREA</p>
-                                    <img src="images/111.jpg" class="auto"> <p class="pro-text">此网站是一个图片类个人站，包含个人信息展示，图片搜索展示分页，文章，音乐库。网站主要使用flex弹性盒模型和css达到响应式页面的布局和样式的实现，使用jQuery达到了动态效果的实现；用ajax实现数据的动态加载。</p>
-                                </div>
-
-                            </div>
-                            <div class="col-sm-4 col-md-5   col-xs-3"><p class="shu">jhsgkjh</p></div>
+                    <div class="part3-right col-md-5">
+                        <div class="title text-center">
+                            <h3 class="style slideRight">practice </h3>
+                            <p class="pro-text slideRight text-left">
+                                1.  设计了网站的UI界面和交互效果，使用Bootstrap，弹性盒模型和css达到响应式页面的布局和样式的	 实现，使用 jQuery达到了动态效果的实现；<br>
+                                2.  使用ajax实现数据的动态加载和url地址分析提取模块函数，实现了音乐分享页面的数据加载；<br>
+                                3.  实现了图片分享页的瀑布流布局，并做了分页处理，提高了网页性能；
+                            </p>
+                            <p class="skill slideRight">项目技术<br>Bootstrap，html，css，JS，jQuery，node.js，ajax，json，AngularJS</p>
                         </div>
-
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 
@@ -264,7 +263,7 @@
                 <div class="col-md-4 slideLeft "><img src="images/invitew.jpg" class="auto"></div>
                 <div class="col-md-4 slideRight"><img src="images/pro4.jpg" class="auto"></div>
             </div>
-            <div class="project-cont1">
+      <!--      <div class="project-cont1">
                 <div class="cont-right col-md-6 col-sm-12">
                     <div class="div-inner text-center" id="img2">
                         <div class="slideRight" ><img src="images/NAME-MeiSu.jpg" class="auto"></div>
@@ -283,9 +282,44 @@
                     <div class="cont-left-down"><div class="div-inner slideLeft"><img src="images/3.jpg" class="auto"></div></div>
                 </div>
 
-            </div>
+            </div>-->
 
         </div>
+        <div class="part1">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="part1-left col-md-6">
+                        <div class="row">
+                            <div class="col-sm-4 col-md-5   col-xs-3"></div>
+                            <div class="col-sm-8 col-md-7 col-xs-9 ">
+                                <p class="sign1Name">HOME BY DESIGN</p>
+                                <div class="sign1 slideLeft">
+                                    <img src="images/NAME-MeiSu.jpg" class="auto">
+                                    <span>FIRMINY-VERT <br>AREA</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="part1-right col-md-6">
+                        <div class="row">
+                            <div class="col-sm-8 col-md-7 col-xs-9 ">
+                                <div class="sign2 slideRight">
+                                    <p class="sign1Name">FIRMINY-VERT AREA</p>
+                                    <img src="images/111.jpg" class="auto"> <p class="pro-text">居住区规划设计，获得专业第一名，并在韩国大邱大学展出。通过sketchup做出模型，渲染大量的效果图，然后用ps将设计进行排版展示。</p>
+                                </div>
+
+                            </div>
+                            <div class="col-sm-4 col-md-5   col-xs-3"><p class="shu">jhsgkjh</p></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <!-----experience----->
@@ -299,7 +333,7 @@
                     <div class="exp-inner">
                         <div><span class="fa fa-glass"></span></div>
                         <p>餐饮店</p>
-                        <p class="exp-text">在校期间，投身大量的社会实践锻炼自己，任店长为新开业的店统筹各项事务，使之良好运营。同时还兼职各类服务员，充分锻炼了自己，体验了生活。</p>
+                        <p class="exp-text">在校期间，投身社会实践锻炼自己，在肯德基等店做兼职，同时有机会任店长为新开业的餐饮店负责各项事务，使之运营，能更快的融入社会生活。</p>
                     </div>
                     <div class="exp-inner  exp-inner-up">
                         <h1 class="exp-title">店长，服务员</h1>

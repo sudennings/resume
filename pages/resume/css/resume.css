@@ -211,6 +211,8 @@ p.kinds{position: relative;margin-bottom: 60px;font-size: 16px;color: #fff;}
 p.kinds:before{content: "";width: 80px;height: 2px;background: #999;position: absolute;left: 50%;margin-left: -40px;bottom: -10px;display: block;}
 .part3{background: #262626;font-size: 16px;}
 .part3 #practice{margin-bottom:2rem; }
+.part3 #tast{margin:3rem 0 5rem; }
+.part3 #tastRight{padding: 0 60px;}
 .part3-right{color: #999;padding-left:30px;}
 .part3-right .pro-text{font-size: 15px;padding: 0;}
 .part3-right .skill{padding-top: 20px;}

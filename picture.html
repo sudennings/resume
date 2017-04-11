@@ -13,7 +13,9 @@
           #homeHeader{line-height: 70px;height: 70px;background:#000; font-size: 18px;}
           #homeHeader .homLogo a{font-size: 40px;letter-spacing: 3px;padding-left: 4rem;color:#fff;}
         #homeHeader .homeMenu>div a{color:#fff;font-weight: bold;text-transform: capitalize;}
-          #homeHeader .menuAc{color:#FCD000; }
+        #homeHeader  .homeMenu>div:hover  a{color:#FCD000; }
+
+        #homeHeader  .homeMenu>div .menuAc{color:#FCD000; }
         .picBanner{background: #323232;height:500px;background: url("images/picbanner.jpg")no-repeat center bottom/cover;}
         .picture{margin-top: -60px;}
         .perPart>div{margin-bottom: 20px;position: relative;transition: all 1s;overflow: hidden;}
@@ -110,10 +112,10 @@
             <div class="col-sm-4 homLogo"><a href="#">TASTYou</a></div>
             <div class="col-sm-8">
                 <div class="row homeMenu">
-                    <div class="col-sm-3 text-center "><a class="menuAc" href="index.html">home</a></div>
+                    <div class="col-sm-3 text-center "><a  href="index.html">home</a></div>
                     <div class="col-sm-3 text-center"><a href="pages/resume/resume.html">resume</a></div>
                     <div class="col-sm-3 text-center"><a href="tastyou.html">echo</a></div>
-                    <div class="col-sm-3 text-center"><a href="picture.html">picture</a></div>
+                    <div class="col-sm-3 text-center"><a  class="menuAc" href="picture.html">picture</a></div>
 
                 </div>
             </div>
@@ -133,6 +135,7 @@
         </div>
     </div>
 </div>
+<script src="js/jquery-3.1.0.js"></script>
 
 </body>
 </html>
